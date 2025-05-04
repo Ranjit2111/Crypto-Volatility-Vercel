@@ -84,8 +84,6 @@ export function VolatilityChart() {
             },
             grid: {
               color: "rgba(42, 42, 60, 0.3)",
-              drawBorder: false,
-              borderDash: [5, 5],
             },
           },
           y: {
@@ -103,7 +101,6 @@ export function VolatilityChart() {
             },
             grid: {
               display: false,
-              drawBorder: false,
             },
           },
         },

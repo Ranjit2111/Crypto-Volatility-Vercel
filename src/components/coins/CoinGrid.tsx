@@ -187,7 +187,8 @@ export function CoinGrid() {
                         height={50}
                         unoptimized
                         onError={(e) => {
-                          (e.target as any).src = `https://placehold.co/50x50/1E1E2D/00B3FF?text=${coin.substring(0, 2).toUpperCase()}`;
+                          const target = e.target as HTMLImageElement;
+                          target.src = `https://placehold.co/50x50/1E1E2D/00B3FF?text=${coin.substring(0, 2).toUpperCase()}`;
                         }}
                       />
                     </div>

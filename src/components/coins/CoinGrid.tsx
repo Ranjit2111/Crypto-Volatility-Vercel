@@ -13,6 +13,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { Search, X, Coins } from "lucide-react";
+import Image from "next/image";
 
 export function CoinGrid() {
   const { coins, isLoading, isError } = useCoins();
@@ -178,12 +179,15 @@ export function CoinGrid() {
                     <div className="relative mb-1 h-14 w-14">
                       <div className="absolute inset-0 rounded-full bg-card shadow-inner" />
                       <div className="absolute inset-0 rounded-full bg-gradient-to-br from-background/80 to-background/20 opacity-80 backdrop-blur-sm" />
-                      <img
+                      <Image
                         src={getCryptoIconUrl(coin)}
                         alt={coin}
                         className="relative z-10 h-full w-full object-contain p-1.5 transition-transform duration-300 group-hover:scale-110"
+                        width={50}
+                        height={50}
+                        unoptimized
                         onError={(e) => {
-                          (e.target as HTMLImageElement).src = `https://placehold.co/50x50/1E1E2D/00B3FF?text=${coin.substring(0, 2).toUpperCase()}`;
+                          (e.target as any).src = `https://placehold.co/50x50/1E1E2D/00B3FF?text=${coin.substring(0, 2).toUpperCase()}`;
                         }}
                       />
                     </div>

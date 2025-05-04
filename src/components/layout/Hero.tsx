@@ -205,7 +205,10 @@ export function Hero() {
                       <div className="text-sm">
                         <span className="text-muted-foreground">Probability:</span>{" "}
                         <span className="font-mono font-semibold text-primary">
-                          {(data.sortedPredictions.find(p => p.coin === data.mostVolatileCoin)?.volatility_probability * 100).toFixed(2)}%
+                          {(() => {
+                            const prediction = data.sortedPredictions.find(p => p.coin === data.mostVolatileCoin);
+                            return prediction ? `${(prediction.volatility_probability * 100).toFixed(2)}%` : 'N/A';
+                          })()}
                         </span>
                       </div>
                     </div>

@@ -20,6 +20,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { DownloadIcon, LineChart, RefreshCw, AlertTriangle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 type Period = "1d" | "30d" | "1y";
 
@@ -236,16 +237,19 @@ export function CoinChartDisplay() {
                 transition={{ duration: 0.5 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/20 pointer-events-none" />
-                <img
+                <Image
                   src={chartUrl || ""}
                   alt={`${selectedCoin} price chart for ${period}`}
                   className="h-full w-full object-contain"
-                  onLoad={() => setIsImageLoading(false)}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 768px"
+                  onLoadingComplete={() => setIsImageLoading(false)}
                   onError={() => {
                     setIsImageLoading(false);
                     setHasError(true);
                   }}
                   onLoadStart={() => setIsImageLoading(true)}
+                  unoptimized // Important for dynamic image URLs from external API
                 />
               </motion.div>
             )}

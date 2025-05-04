@@ -10,7 +10,7 @@
 
 # testing
 /coverage
-
+src/components/debug/ApiDebugger.tsx
 # next.js
 /.next/
 /out/

@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Disable Turbopack (using proper configuration format)
-  turbopack: {
-    enabled: false
+  // Disable experimental features
+  experimental: {
+    turbo: false
   }
 };
 

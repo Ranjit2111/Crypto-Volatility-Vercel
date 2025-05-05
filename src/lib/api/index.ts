@@ -19,29 +19,15 @@ export interface PredictionResponse {
 
 // Create a fetcher function that handles the response and errors
 const fetcher = async (url: string) => {
-  console.log(`Fetching from: ${API_BASE_URL}${url}`);
+  const response = await fetch(`${API_BASE_URL}${url}`);
   
-  try {
-    const response = await fetch(`${API_BASE_URL}${url}`, {
-      headers: {
-        'Accept': 'application/json',
-      },
-      // Adding credentials might be needed for CORS with cookies
-      // credentials: 'include',
-    });
-    
-    // If the response is not successful, throw an error
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error(`API Error (${response.status}): ${errorText}`);
-      throw new Error(`API Error (${response.status}): ${url}`);
-    }
-    
-    return response.json();
-  } catch (error) {
-    console.error(`Fetch error for ${url}:`, error);
+  // If the response is not successful, throw an error
+  if (!response.ok) {
+    const error = new Error('An error occurred while fetching the data.');
     throw error;
   }
+  
+  return response.json();
 };
 
 // Custom hook for health check

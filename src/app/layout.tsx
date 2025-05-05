@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { ApiDebugger } from "@/components/debug/ApiDebugger";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,8 +34,6 @@ export default function RootLayout({
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >
         {children}
-        {/* API Debugger - for development only */}
-        <ApiDebugger />
       </body>
     </html>
   );

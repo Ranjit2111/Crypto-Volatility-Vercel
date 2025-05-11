@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { getFeatureImportancePlotUrl } from "@/lib/api";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
 import { motion, AnimatePresence } from "framer-motion";
 import { PieChart, RefreshCw, AlertTriangle, DownloadIcon } from "lucide-react";
 import Image from "next/image";

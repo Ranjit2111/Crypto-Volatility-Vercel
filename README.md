@@ -1,6 +1,6 @@
 # Crypto Volatility Dashboard
 
-A modern, responsive frontend dashboard for the Crypto Volatility Watcher API built with Next.js and shadcn UI.
+A modern, responsive frontend dashboard for the Crypto Volatility Tracker API built with Next.js and shadcn UI.
 
 ## Features
 
@@ -23,7 +23,7 @@ A modern, responsive frontend dashboard for the Crypto Volatility Watcher API bu
 ### Prerequisites
 
 - Node.js 18+ and npm
-- A running instance of the Crypto Volatility Watcher API
+- A running instance of the Crypto Volatility Tracker API
 
 ### Installation
 

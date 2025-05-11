@@ -2,6 +2,7 @@ import { MainLayout } from "@/components/layout/MainLayout";
 import { Hero } from "@/components/layout/Hero";
 import { VolatilityChart } from "@/components/predictions/VolatilityChart";
 import { PredictionTable } from "@/components/predictions/PredictionTable";
+import { FeatureImportanceChart } from "@/components/predictions/FeatureImportanceChart";
 import { CoinGrid } from "@/components/coins/CoinGrid";
 import { CoinChartDisplay } from "@/components/coins/CoinChartDisplay";
 
@@ -14,9 +15,10 @@ export default function Home() {
       {/* Prediction Section */}
       <section className="py-12">
         <div className="container">
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <VolatilityChart />
             <PredictionTable />
+            <FeatureImportanceChart />
           </div>
         </div>
       </section>

@@ -2,20 +2,19 @@
 
 import { useHealthCheck } from "@/lib/api";
 import { Badge } from "@/components/ui/badge";
+import { BarChartBig } from 'lucide-react';
 
 export function Header() {
   const { isHealthy, isLoading } = useHealthCheck();
   
   return (
-    <header className="w-full border-b border-border bg-background/80 backdrop-blur-sm">
-      <div className="container flex h-16 items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="flex items-center">
-            <span className="text-xl font-bold text-primary animate-pulse-glow">⟁</span>
-            <h1 className="ml-2 text-xl font-bold tracking-tight text-white">
-              Crypto<span className="text-primary">Volatility</span>Watcher
-            </h1>
-          </div>
+    <header className="w-full border-b border-border bg-background/80 backdrop-blur-sm sticky top-0 z-50">
+      <div className="container flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-3">
+          <BarChartBig className="h-7 w-7 text-primary" />
+          <h1 className="text-xl font-semibold tracking-tight text-foreground">
+            Crypto<span className="text-primary font-bold">Volatility</span>Tracker
+          </h1>
         </div>
         
         <div className="flex items-center gap-4">

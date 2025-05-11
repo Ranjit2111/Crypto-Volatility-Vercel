@@ -5,12 +5,84 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { TrendingUp, TrendingDown, ChevronDown, Sparkles } from "lucide-react";
 import Link from "next/link";
+import { useState, useEffect } from "react";
+
+// Define types for the styles of animated particles
+interface AnimatedStyle {
+  top?: string;
+  left?: string;
+  right?: string;
+  opacity?: number;
+  height?: string;
+  width?: string;
+  transformOrigin?: string;
+  transform?: string;
+  background?: string;
+}
 
 export function Hero() {
   const { data } = useProcessedPredictions();
-  
-  // Determine if price is likely to go up or down (just for UI display)
-  const priceDirection = data?.mostVolatileCoin ? (Math.random() > 0.5 ? 'up' : 'down') : null;
+  const [priceDirection, setPriceDirection] = useState<'up' | 'down' | null>(null);
+
+  // State for client-side generated styles
+  const [waveStyles, setWaveStyles] = useState<AnimatedStyle[]>([]);
+  const [nodeStyles, setNodeStyles] = useState<AnimatedStyle[]>([]);
+  const [lineStyles, setLineStyles] = useState<AnimatedStyle[]>([]);
+  const [orbStyles, setOrbStyles] = useState<AnimatedStyle[]>([]);
+
+  useEffect(() => {
+    // Generate styles only on the client-side
+    setPriceDirection(data?.mostVolatileCoin ? (Math.random() > 0.5 ? 'up' : 'down') : null);
+
+    setWaveStyles(
+      [...Array(20)].map(() => ({
+        top: `${5 + Math.random() * 90}%`,
+        left: "0px",
+        right: "0px",
+        opacity: 0.5 + Math.random() * 0.5,
+        height: `${1 + Math.random() * 2}px`,
+      }))
+    );
+
+    setNodeStyles(
+      [...Array(15)].map(() => ({
+        width: `${3 + Math.random() * 8}px`,
+        height: `${3 + Math.random() * 8}px`,
+        top: `${Math.random() * 100}%`,
+        left: `${Math.random() * 100}%`,
+      }))
+    );
+
+    setLineStyles(
+      [...Array(10)].map(() => {
+        const startX = Math.random() * 100;
+        const startY = Math.random() * 100;
+        const endX = startX + (Math.random() * 40 - 20);
+        const endY = startY + (Math.random() * 40 - 20);
+        return {
+          height: '1px',
+          width: '100px',
+          top: `${startY}%`,
+          left: `${startX}%`,
+          transformOrigin: 'left center',
+          transform: `rotate(${Math.atan2(endY - startY, endX - startX) * (180 / Math.PI)}deg)`,
+        };
+      })
+    );
+
+    setOrbStyles(
+      [...Array(3)].map((_, i) => ({
+        background: i % 2 === 0 
+          ? 'radial-gradient(circle, rgba(0, 179, 255, 0.4) 0%, rgba(0, 179, 255, 0) 70%)' 
+          : 'radial-gradient(circle, rgba(179, 32, 255, 0.4) 0%, rgba(179, 32, 255, 0) 70%)',
+        width: `${200 + Math.random() * 300}px`,
+        height: `${200 + Math.random() * 300}px`,
+        top: `${Math.random() * 100}%`,
+        left: `${Math.random() * 100}%`,
+        transform: 'translate(-50%, -50%)',
+      }))
+    );
+  }, [data]); // Regenerate priceDirection if data changes
   
   return (
     <div className="relative overflow-hidden py-20 md:py-28">
@@ -21,24 +93,18 @@ export function Hero() {
         {/* Enhanced blockchain visualization */}
         <div className="absolute inset-0 opacity-30">
           {/* Horizontal price waves */}
-          {[...Array(20)].map((_, i) => (
+          {waveStyles.map((style, i) => (
             <motion.div
               key={`wave-${i}`}
               className="absolute h-px bg-gradient-to-r from-transparent via-primary to-transparent"
-              style={{
-                top: `${5 + Math.random() * 90}%`,
-                left: 0,
-                right: 0,
-                opacity: 0.5 + Math.random() * 0.5,
-                height: `${1 + Math.random() * 2}px`,
-              }}
+              style={style}
               animate={{
                 scaleX: [0.8, 1.2, 0.8],
                 opacity: [0.3, 0.7, 0.3],
                 x: ["-10%", "10%", "-10%"],
               }}
               transition={{
-                duration: 15 + Math.random() * 20,
+                duration: 15 + Math.random() * 20, // Animation properties can still use Math.random if not affecting initial style
                 repeat: Infinity,
                 repeatType: "reverse",
                 delay: Math.random() * 5,
@@ -48,16 +114,11 @@ export function Hero() {
           ))}
           
           {/* Network nodes */}
-          {[...Array(15)].map((_, i) => (
+          {nodeStyles.map((style, i) => (
             <motion.div
               key={`node-${i}`}
               className="absolute rounded-full bg-accent"
-              style={{
-                width: 3 + Math.random() * 8,
-                height: 3 + Math.random() * 8,
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-              }}
+              style={style}
               animate={{
                 scale: [1, 1.5, 1],
                 opacity: [0.1, 0.7, 0.1],
@@ -77,54 +138,31 @@ export function Hero() {
           ))}
           
           {/* Connection lines between nodes */}
-          {[...Array(10)].map((_, i) => {
-            const startX = Math.random() * 100;
-            const startY = Math.random() * 100;
-            const endX = startX + (Math.random() * 40 - 20);
-            const endY = startY + (Math.random() * 40 - 20);
-            
-            return (
-              <motion.div
-                key={`line-${i}`}
-                className="absolute bg-ring/30"
-                style={{
-                  height: '1px',
-                  width: '100px',
-                  top: `${startY}%`,
-                  left: `${startX}%`,
-                  transformOrigin: 'left center',
-                  transform: `rotate(${Math.atan2(endY - startY, endX - startX) * (180 / Math.PI)}deg)`,
-                }}
-                animate={{
-                  opacity: [0, 0.5, 0],
-                  scaleX: [0, 1, 0],
-                }}
-                transition={{
-                  duration: 4 + Math.random() * 4,
-                  repeat: Infinity,
-                  delay: Math.random() * 5,
-                  ease: "easeInOut",
-                  repeatDelay: Math.random() * 2,
-                }}
-              />
-            );
-          })}
+          {lineStyles.map((style, i) => (
+            <motion.div
+              key={`line-${i}`}
+              className="absolute bg-ring/30"
+              style={style}
+              animate={{
+                opacity: [0, 0.5, 0],
+                scaleX: [0, 1, 0],
+              }}
+              transition={{
+                duration: 4 + Math.random() * 4,
+                repeat: Infinity,
+                delay: Math.random() * 5,
+                ease: "easeInOut",
+                repeatDelay: Math.random() * 2,
+              }}
+            />
+          ))}
           
           {/* Animated gradient orbs */}
-          {[...Array(3)].map((_, i) => (
+          {orbStyles.map((style, i) => (
             <motion.div
               key={`orb-${i}`}
               className="absolute rounded-full opacity-20 blur-xl"
-              style={{
-                background: i % 2 === 0 
-                  ? 'radial-gradient(circle, rgba(0, 179, 255, 0.4) 0%, rgba(0, 179, 255, 0) 70%)' 
-                  : 'radial-gradient(circle, rgba(179, 32, 255, 0.4) 0%, rgba(179, 32, 255, 0) 70%)',
-                width: 200 + Math.random() * 300,
-                height: 200 + Math.random() * 300,
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                transform: 'translate(-50%, -50%)',
-              }}
+              style={style}
               animate={{
                 scale: [1, 1.2, 1],
                 x: [0, 30, 0],

@@ -74,6 +74,11 @@ export function getCoinPlotUrl(coin: string, period: '1y' | '30d' | '1d' = '30d'
   return `${API_BASE_URL}/plot/${coin}?period=${period}`;
 }
 
+// Function to get feature importance plot URL
+export function getFeatureImportancePlotUrl(): string {
+  return `${API_BASE_URL}/plot/feature_importance`;
+}
+
 // Custom hook for organizing predictions data for visualization
 export function useProcessedPredictions() {
   const { predictions, isLoading, isError, refresh } = usePredictions();

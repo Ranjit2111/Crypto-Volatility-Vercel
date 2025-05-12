@@ -20,7 +20,7 @@ export function Footer() {
             whileHover={{ scale: 1.05 }}
           >
             <Code className="h-4 w-4 text-primary mr-1" />
-            <span className="font-medium text-foreground">Designed & Developed by</span>
+            <span className="font-medium text-foreground">Designed & Developed by Ranjit</span>
             <Code className="h-4 w-4 text-primary mr-1" />
           </motion.div>
           

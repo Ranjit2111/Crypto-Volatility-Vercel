@@ -2,7 +2,6 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Lightbulb, TrendingUp, Activity, LineChart, PieChart } from "lucide-react";
 
@@ -84,7 +83,7 @@ export function FeatureEngineering() {
           </TabsList>
         </div>
 
-        {featureCategories.map((category, catIndex) => (
+        {featureCategories.map((category) => (
           <TabsContent key={category.id} value={category.id}>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {category.features.map((feature, index) => (

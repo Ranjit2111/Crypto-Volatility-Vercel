@@ -66,15 +66,6 @@ export function CoinChartDisplay() {
     setIsImageLoading(true);
   };
 
-  // Get period label for display
-  const getPeriodLabel = (period: Period): string => {
-    switch (period) {
-      case "1d": return "24 Hours";
-      case "30d": return "30 Days";
-      case "1y": return "1 Year";
-    }
-  };
-
   return (
     <Card className="glass-card overflow-hidden border-border/50">
       <CardHeader className="border-b border-border/40 pb-3">

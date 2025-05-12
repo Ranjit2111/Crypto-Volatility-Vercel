@@ -5,7 +5,7 @@ import { getFeatureImportancePlotUrl } from "@/lib/api";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import { PieChart, RefreshCw, AlertTriangle, DownloadIcon, BarChartBig, ArrowRight } from "lucide-react";
+import { PieChart, RefreshCw, AlertTriangle, DownloadIcon, BarChartBig } from "lucide-react";
 import Image from "next/image";
 import { ContextLink } from "@/components/ui/context-link";
 
@@ -13,7 +13,7 @@ interface FeatureImportanceChartProps {
   coin: string;
 }
 
-const FeatureImportanceChart: React.FC<FeatureImportanceChartProps> = ({ coin }) => {
+const FeatureImportanceChart: React.FC<FeatureImportanceChartProps> = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [chartUrl, setChartUrl] = useState<string | null>(null);

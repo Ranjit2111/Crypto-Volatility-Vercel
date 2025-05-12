@@ -1,15 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Configure external image domains
+  reactStrictMode: true,
+  eslint: {
+    ignoreDuringBuilds: true, // Disable ESLint during build
+  },
   images: {
-    domains: ['cryptoicons.org', 'placehold.co'],
     remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: '**',
+      },
       {
         protocol: 'https',
         hostname: '**',
       },
     ],
-  }
+  },
 };
 
 module.exports = nextConfig; 

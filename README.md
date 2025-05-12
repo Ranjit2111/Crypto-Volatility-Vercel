@@ -1,5 +1,7 @@
 # Crypto Volatility Dashboard
 
+**Note: This repository contains only the frontend codebase used for deployment on Vercel. The backend ML engineering project is available at [https://github.com/Ranjit2111/Crypto-Volatility-ML-Engineering](https://github.com/Ranjit2111/Crypto-Volatility-ML-Engineering).**
+
 A modern, responsive frontend dashboard for the Crypto Volatility Tracker API built with Next.js and shadcn UI.
 
 ## Features
@@ -30,8 +32,8 @@ A modern, responsive frontend dashboard for the Crypto Volatility Tracker API bu
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/crypto-volatility-dashboard.git
-cd crypto-volatility-dashboard
+git clone https://github.com/Ranjit2111/Crypto-Volatility-Vercel.git
+cd Crypto-Volatility-Vercel
 ```
 
 2. Install dependencies:
@@ -66,7 +68,7 @@ To deploy this application to Vercel:
    - `NEXT_PUBLIC_API_URL`: Your production API URL (e.g., https://your-api-domain.com)
 4. Deploy the application
 
-For more detailed information, see [Vercel&#39;s Next.js deployment documentation](https://nextjs.org/docs/deployment).
+For more detailed information, see [Vercel's Next.js deployment documentation](https://nextjs.org/docs/deployment).
 
 ## Connecting to Production API
 
@@ -74,6 +76,11 @@ To connect to a production API:
 
 1. Update the `NEXT_PUBLIC_API_URL` environment variable to point to your deployed API URL
 2. Make sure CORS is properly configured on your API to allow requests from your frontend domain
+
+## Related Repositories
+
+- **Frontend (This Repository)**: [https://github.com/Ranjit2111/Crypto-Volatility-Vercel](https://github.com/Ranjit2111/Crypto-Volatility-Vercel)
+- **Backend ML Engineering**: [https://github.com/Ranjit2111/Crypto-Volatility-ML-Engineering](https://github.com/Ranjit2111/Crypto-Volatility-ML-Engineering)
 
 ## License
 

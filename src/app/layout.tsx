@@ -19,8 +19,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Crypto Volatility Tracker",
-  description: "Track and predict cryptocurrency volatility with advanced analytics",
+  title: "Crypto Volatility Watcher",
+  description: "AI-powered daily cryptocurrency volatility predictions. Track and forecast market movements with advanced analytics and insights.",
 };
 
 export default function RootLayout({

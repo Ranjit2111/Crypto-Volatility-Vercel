@@ -66,13 +66,10 @@ export function MainLayout({ children }: MainLayoutProps) {
       {/* Footer */}
       <footer className="border-t border-border bg-background/80 backdrop-blur-sm py-6">
         <div className="container">
-          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="text-center text-sm text-muted-foreground md:text-left">
+          <div className="flex flex-col items-center justify-center gap-4 md:flex-row md:justify-end">
+            <p className="text-center text-sm text-muted-foreground">
               &copy; {new Date().getFullYear()} Crypto Volatility Tracker. All
               rights reserved.
-            </p>
-            <p className="text-center text-sm text-muted-foreground md:text-right">
-              Created by Ranjit
             </p>
           </div>
         </div>

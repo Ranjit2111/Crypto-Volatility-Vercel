@@ -3,7 +3,7 @@
 import { useProcessedPredictions } from "@/lib/api";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { TrendingUp, TrendingDown, ChevronDown, Sparkles } from "lucide-react";
+import { TrendingUp, TrendingDown, ChevronDown, Sparkles, BarChart, Activity, Code } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
@@ -189,7 +189,7 @@ export function Hero() {
             transition={{ duration: 0.7 }}
           >
             <h1 className="bg-gradient-to-r from-primary via-white to-accent bg-clip-text text-transparent text-5xl md:text-6xl font-bold tracking-tight drop-shadow-sm">
-              Crypto Volatility Tracker
+              Crypto Volatility Watcher
             </h1>
           </motion.div>
           
@@ -279,6 +279,41 @@ export function Hero() {
           </motion.div>
           
           <motion.div
+            className="mt-8 flex flex-wrap justify-center gap-3"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.0, duration: 0.6 }}
+          >
+            <Link href="#model-evolution" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Button 
+                variant="ghost" 
+                className="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-secondary/20"
+              >
+                <BarChart className="h-4 w-4" />
+                <span>Model Evolution</span>
+              </Button>
+            </Link>
+            <Link href="#feature-engineering" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Button 
+                variant="ghost" 
+                className="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-secondary/20"
+              >
+                <Activity className="h-4 w-4" />
+                <span>Feature Engineering</span>
+              </Button>
+            </Link>
+            <Link href="#project-overview" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Button 
+                variant="ghost" 
+                className="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-secondary/20"
+              >
+                <Code className="h-4 w-4" />
+                <span>Project Overview</span>
+              </Button>
+            </Link>
+          </motion.div>
+          
+          <motion.div
             className="mt-16 flex justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -293,10 +328,10 @@ export function Hero() {
                   repeatType: "loop",
                   ease: "easeInOut" 
                 }}
-                className="flex flex-col items-center justify-center"
+                className="flex flex-col items-center justify-center bg-secondary/20 px-6 py-3 rounded-full backdrop-blur-sm border border-border/30 hover:border-primary/40 transition-all duration-300"
               >
-                <span className="text-sm mb-2">Scroll to explore</span>
-                <ChevronDown className="h-6 w-6" />
+                <span className="text-sm mb-2">Scroll to explore all sections</span>
+                <ChevronDown className="h-6 w-6 text-primary" />
               </motion.div>
             </Link>
           </motion.div>

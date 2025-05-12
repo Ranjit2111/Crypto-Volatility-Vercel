@@ -2,7 +2,8 @@
 
 import { useHealthCheck } from "@/lib/api";
 import { Badge } from "@/components/ui/badge";
-import { BarChartBig } from 'lucide-react';
+import { BarChartBig, Github, Linkedin } from 'lucide-react';
+import Link from "next/link";
 
 export function Header() {
   const { isHealthy, isLoading } = useHealthCheck();
@@ -36,6 +37,28 @@ export function Header() {
                 Offline
               </Badge>
             )}
+          </div>
+          
+          {/* Social Links */}
+          <div className="flex items-center gap-2 ml-2">
+            <Link
+              href="https://www.linkedin.com/in/ranjit-n/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-1.5 rounded-md bg-secondary/20 hover:bg-primary/20 transition-colors"
+              aria-label="LinkedIn Profile"
+            >
+              <Linkedin className="h-4 w-4 text-foreground hover:text-primary transition-colors" />
+            </Link>
+            <Link
+              href="https://github.com/Ranjit2111/Crypto-Volatility-ML-Engineering"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-1.5 rounded-md bg-secondary/20 hover:bg-primary/20 transition-colors"
+              aria-label="GitHub Repository"
+            >
+              <Github className="h-4 w-4 text-foreground hover:text-primary transition-colors" />
+            </Link>
           </div>
         </div>
       </div>

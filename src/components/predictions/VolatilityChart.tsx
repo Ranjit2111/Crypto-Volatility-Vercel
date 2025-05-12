@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { useProcessedPredictions } from "@/lib/api";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -138,19 +138,10 @@ export function VolatilityChart() {
               <TrendingUp className="h-5 w-5 text-primary" />
               <CardTitle>Volatility Predictions</CardTitle>
             </div>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleRefresh}
-              className="h-8 w-8 p-0 border-border/60 hover:border-primary/70 hover:bg-secondary/50"
-              disabled={isLoading}
-            >
-              <RefreshCw
-                className={`h-4 w-4 text-primary ${isLoading ? "animate-spin" : ""}`}
-              />
-              <span className="sr-only">Refresh data</span>
-            </Button>
           </div>
+          <CardDescription className="text-muted-foreground mt-1">
+            Probability of each coin being the most volatile in the next 24 hours.
+          </CardDescription>
         </CardHeader>
         <CardContent className="p-6">
           <div className="relative h-[320px] w-full">
@@ -186,7 +177,7 @@ export function VolatilityChart() {
               >
                 <div className="mb-4 flex items-center justify-between text-sm">
                   <span className="text-muted-foreground">
-                    Based on <span className="font-mono">{data.date}</span> data
+                    Predictions for: <span className="font-mono">{data.date}</span> (next 24h outlook)
                   </span>
                   <span className="font-numeric text-primary">
                     Top Pick: {data.mostVolatileCoin.toUpperCase()}

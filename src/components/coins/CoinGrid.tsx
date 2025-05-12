@@ -94,7 +94,7 @@ export function CoinGrid() {
             <div>
               <CardTitle>Coins Tracked</CardTitle>
               <CardDescription>
-                {coins.length} cryptocurrencies being tracked
+                {coins.length} cryptocurrencies being tracked. Click on them to view their CoinMarketCap page.
               </CardDescription>
             </div>
           </div>

@@ -83,7 +83,7 @@ export function CoinChartDisplay() {
           <div>
             <CardTitle>Price Chart</CardTitle>
             <CardDescription>
-              View historical price charts for each cryptocurrency
+              View historical price charts for each cryptocurrency. Backend plots may include OHLC data.
             </CardDescription>
           </div>
         </div>

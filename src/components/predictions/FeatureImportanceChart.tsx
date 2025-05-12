@@ -5,10 +5,15 @@ import { getFeatureImportancePlotUrl } from "@/lib/api";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import { PieChart, RefreshCw, AlertTriangle, DownloadIcon } from "lucide-react";
+import { PieChart, RefreshCw, AlertTriangle, DownloadIcon, BarChartBig, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { ContextLink } from "@/components/ui/context-link";
 
-export function FeatureImportanceChart() {
+interface FeatureImportanceChartProps {
+  coin: string;
+}
+
+const FeatureImportanceChart: React.FC<FeatureImportanceChartProps> = ({ coin }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [chartUrl, setChartUrl] = useState<string | null>(null);
@@ -58,9 +63,14 @@ export function FeatureImportanceChart() {
       <Card className="glass-card overflow-hidden border-border/50">
         <CardHeader className="pb-3 border-b border-border/40">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <PieChart className="h-5 w-5 text-primary" />
-              <CardTitle>Feature Importance</CardTitle>
+            <div>
+              <div className="flex items-center gap-2">
+                <PieChart className="h-5 w-5 text-primary" />
+                <CardTitle>Feature Importance</CardTitle>
+              </div>
+              <p className="text-sm text-gray-400 mt-1">
+                Features influencing model predictions with largest impact shown as bigger pie segments
+              </p>
             </div>
             <div className="flex items-center gap-2">
               <Button
@@ -89,7 +99,7 @@ export function FeatureImportanceChart() {
           </div>
         </CardHeader>
         <CardContent className="p-6">
-          <div className="relative h-[480px] w-full">
+          <div className="relative h-[560px] w-full">
             <AnimatePresence mode="wait">
               {chartUrl && !hasError && (
                 <motion.div
@@ -97,11 +107,11 @@ export function FeatureImportanceChart() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="relative h-full w-full rounded-lg overflow-hidden border border-border/20"
+                  className="relative h-[500px] w-full rounded-lg overflow-hidden border border-border/20"
                 >
                   <Image
                     src={chartUrl}
-                    alt="Feature Importance Plot"
+                    alt={`Feature Importance Plot`}
                     layout="fill"
                     objectFit="contain"
                     unoptimized 
@@ -115,6 +125,7 @@ export function FeatureImportanceChart() {
                       setHasError(true);
                       setIsLoading(false);
                     }}
+                    priority
                   />
                   <div className="absolute inset-0 pointer-events-none rounded-lg border border-border/10"></div>
                 </motion.div>
@@ -129,8 +140,8 @@ export function FeatureImportanceChart() {
                 exit={{ opacity: 0 }}
                 className="absolute inset-0 flex flex-col items-center justify-center space-y-3 bg-card/30 backdrop-blur-sm rounded-lg"
               >
-                <RefreshCw className="h-8 w-8 animate-spin text-primary/70" />
-                <p className="text-sm text-muted-foreground">Loading chart...</p>
+                <BarChartBig className="h-12 w-12 text-blue-500 animate-pulse" />
+                <p className="text-lg font-semibold text-gray-300 mt-2">Loading chart...</p>
               </motion.div>
             )}
 
@@ -171,8 +182,21 @@ export function FeatureImportanceChart() {
                  </motion.div>
             )}
           </div>
+          
+          {/* Feature importance explanation - directly in the card */}
+          {!isLoading && !hasError && chartUrl && (
+            <div className="mt-3 p-3 rounded-lg bg-secondary/20 border border-border/40 flex justify-center">
+              <ContextLink 
+                targetId="feature-engineering"
+                label="Learn more about our features"
+                className="font-medium"
+              />
+            </div>
+          )}
         </CardContent>
       </Card>
     </motion.div>
   );
-} 
+};
+
+export default FeatureImportanceChart; 

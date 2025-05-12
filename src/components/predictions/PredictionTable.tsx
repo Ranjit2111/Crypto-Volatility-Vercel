@@ -81,7 +81,7 @@ export function PredictionTable() {
       <CardHeader>
         <CardTitle>Prediction Details</CardTitle>
         <CardDescription>
-          Prediction date: <span className="font-mono">{data.date}</span>
+          Predictions for: <span className="font-mono">{data.date}</span> (next 24h outlook)
         </CardDescription>
       </CardHeader>
       <CardContent>

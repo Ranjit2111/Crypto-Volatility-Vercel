@@ -191,6 +191,18 @@
     background: rgba(0, 179, 255, 0.8);
   }
   
+  /* Highlight pulse animation for the Performance in Context section */
+  .highlight-pulse {
+    animation: highlightPulse 2s ease-in-out;
+    position: relative;
+  }
+  
+  @keyframes highlightPulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 179, 255, 0); }
+    20% { box-shadow: 0 0 0 4px rgba(0, 179, 255, 0.5); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 179, 255, 0); }
+  }
+  
   /* Enhanced glow effects for interactive elements */
   .glow-effect {
     box-shadow: 0 0 10px rgba(0, 179, 255, 0.3), 

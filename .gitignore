@@ -53,3 +53,5 @@ dist/
 # Log files beyond what's already covered
 logs/
 *.log
+
+backend_readme.md

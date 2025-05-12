@@ -160,7 +160,8 @@ export function CoinChartDisplay() {
           </div>
         </div>
 
-        <div className="relative h-[350px] overflow-hidden rounded-lg border border-border/40 bg-card/30 p-3 backdrop-blur-sm">
+        <div className="relative h-[400px] overflow-hidden rounded-lg border border-border/40 bg-card/30 backdrop-blur-sm">
+          {/* The following block for selectedCoin and period display is now commented out
           {selectedCoin && (
             <div className="absolute left-4 top-4 z-10 max-w-[80%] rounded-full bg-card/80 px-3 py-1.5 backdrop-blur-md">
               <div className="flex items-center gap-2 text-sm">
@@ -170,6 +171,7 @@ export function CoinChartDisplay() {
               </div>
             </div>
           )}
+          */}
           
           <AnimatePresence mode="wait">
             {!selectedCoin ? (

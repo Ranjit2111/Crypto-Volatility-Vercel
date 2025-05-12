@@ -12,26 +12,29 @@ export default function Home() {
       {/* Hero Section */}
       <Hero />
 
-      {/* Prediction Section */}
-      <section className="py-12">
+      {/* Prediction Section - Reverted to 2 columns, added ID */}
+      <section id="predictions" className="py-12">
         <div className="container">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2"> {/* Reverted to 2 columns */}
             <VolatilityChart />
             <PredictionTable />
-            <FeatureImportanceChart />
+            {/* FeatureImportanceChart removed from here */}
           </div>
         </div>
       </section>
 
-      {/* Coin Chart Section */}
+      {/* Combined Chart Section - New section for CoinChartDisplay and FeatureImportanceChart */}
       <section className="py-12 bg-secondary/5">
         <div className="container">
-          <CoinChartDisplay />
+          <div className="grid gap-6 lg:grid-cols-2"> {/* Two columns for these charts */}
+            <CoinChartDisplay />
+            <FeatureImportanceChart /> {/* Moved here */}
+          </div>
         </div>
       </section>
 
-      {/* Coin Grid Section */}
-      <section className="py-12">
+      {/* Coin Grid Section - Added ID */}
+      <section id="coins" className="py-12">
         <div className="container">
           <CoinGrid />
         </div>

@@ -9,7 +9,7 @@ export function Header() {
   const { isHealthy, isLoading } = useHealthCheck();
   
   return (
-    <header className="w-full border-b border-border bg-background/80 backdrop-blur-sm sticky top-0 z-50">
+    <header className="w-full bg-background/80 backdrop-blur-sm sticky top-0 z-50">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2 sm:gap-3">
           <BarChartBig className="h-6 w-6 sm:h-7 sm:w-7 text-primary" />

@@ -64,7 +64,7 @@ export function MainLayout({ children }: MainLayoutProps) {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-background/80 backdrop-blur-sm py-6">
+      <footer className="bg-background/80 backdrop-blur-sm py-6">
         <div className="container">
           <div className="flex flex-col items-center justify-center gap-4 md:flex-row md:justify-end">
             <p className="text-center text-sm text-muted-foreground">

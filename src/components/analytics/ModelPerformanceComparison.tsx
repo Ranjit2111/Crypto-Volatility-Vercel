@@ -25,23 +25,23 @@ const metrics = {
 export function ModelPerformanceComparison() {
   return (
     <div className="space-y-6">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
         {/* Left: Metrics Comparison */}
         <Card className="glass-card overflow-hidden border-border/50">
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <BarChart className="h-6 w-6 text-primary" />
-              <h3 className="text-xl font-semibold">Performance Metrics Comparison</h3>
+              <h3 className="text-lg sm:text-xl font-semibold">Performance Metrics Comparison</h3>
             </div>
             
             <div className="space-y-6">
               {/* Accuracy */}
               <div>
-                <div className="mb-2 flex justify-between">
+                <div className="mb-2 flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-0">
                   <span className="text-sm font-medium">Accuracy</span>
-                  <div className="flex gap-4">
-                    <span className="text-sm font-mono text-muted-foreground">Initial: {(metrics.untuned.accuracy * 100).toFixed(0)}%</span>
-                    <span className="text-sm font-mono text-primary">Tuned: {(metrics.tuned.accuracy * 100).toFixed(0)}%</span>
+                  <div className="flex gap-2 sm:gap-4 text-xs sm:text-sm">
+                    <span className="font-mono text-muted-foreground">Initial: {(metrics.untuned.accuracy * 100).toFixed(0)}%</span>
+                    <span className="font-mono text-primary">Tuned: {(metrics.tuned.accuracy * 100).toFixed(0)}%</span>
                   </div>
                 </div>
                 <div className="h-2.5 w-full bg-secondary/40 rounded-full overflow-hidden">
@@ -158,7 +158,7 @@ export function ModelPerformanceComparison() {
         {/* Right: Key Improvements */}
         <Card className="glass-card overflow-hidden border-border/50">
           <CardContent className="p-6">
-            <h3 className="text-xl font-semibold mb-4">Key Improvements</h3>
+            <h3 className="text-lg sm:text-xl font-semibold mb-4">Key Improvements</h3>
             
             <div className="space-y-4">
               <div className="flex gap-3">

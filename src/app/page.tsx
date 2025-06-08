@@ -36,20 +36,20 @@ export default function Home() {
               
               {/* Understanding Our Predictions card */}
               <Card className="glass-card border-border/50 overflow-hidden bg-secondary/5">
-                <CardContent className="p-6">
-                  <div className="flex gap-4 items-start">
-                    <div className="rounded-full bg-primary/20 p-3 flex-shrink-0">
-                      <Info className="h-6 w-6 text-primary" />
+                <CardContent className="p-4 sm:p-6">
+                  <div className="flex gap-3 sm:gap-4 items-start">
+                    <div className="rounded-full bg-primary/20 p-2 sm:p-3 flex-shrink-0">
+                      <Info className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-medium mb-2">Understanding Our Predictions</h3>
+                      <h3 className="text-base sm:text-lg font-medium mb-2">Understanding Our Predictions</h3>
                       <p className="text-muted-foreground">
                         Our predictions show which cryptocurrency is likely to experience the highest absolute price movement 
                         in the next 24 hours, regardless of direction (up or down). Volatility represents the degree of 
                         price fluctuation, not the direction. Higher volatility typically means higher risk but also 
                         potential trading opportunities.
                       </p>
-                      <div className="mt-4 flex flex-wrap gap-3">
+                      <div className="mt-3 sm:mt-4 flex flex-wrap gap-2 sm:gap-3">
                         <div className="flex items-center gap-2 text-sm text-muted-foreground">
                           <Clock className="h-4 w-4 text-primary/70" />
                           <span>Predictions updated daily</span>

@@ -93,9 +93,12 @@ export function PredictionTable() {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead className="w-[100px]">Rank</TableHead>
+                <TableHead className="w-[60px] sm:w-[100px]">Rank</TableHead>
                 <TableHead>Coin</TableHead>
-                <TableHead className="text-right">Volatility Probability</TableHead>
+                <TableHead className="text-right">
+                  <span className="hidden sm:inline">Volatility Probability</span>
+                  <span className="sm:hidden">Probability</span>
+                </TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -111,18 +114,19 @@ export function PredictionTable() {
                       : ""
                   }`}
                 >
-                  <TableCell className="font-mono">{index + 1}</TableCell>
+                  <TableCell className="font-mono text-sm sm:text-base">{index + 1}</TableCell>
                   <TableCell className="font-medium">
-                    <div className="flex items-center gap-2">
-                      {prediction.coin.toUpperCase()}
+                    <div className="flex items-center gap-1 sm:gap-2">
+                      <span className="text-sm sm:text-base">{prediction.coin.toUpperCase()}</span>
                       {prediction.coin === data.mostVolatileCoin && (
-                        <Badge className="bg-primary text-primary-foreground">
-                          Top Pick
+                        <Badge className="bg-primary text-primary-foreground text-xs">
+                          <span className="hidden sm:inline">Top Pick</span>
+                          <span className="sm:hidden">Top</span>
                         </Badge>
                       )}
                     </div>
                   </TableCell>
-                  <TableCell className="text-right font-mono">
+                  <TableCell className="text-right font-mono text-sm sm:text-base">
                     {(prediction.volatility_probability * 100).toFixed(2)}%
                   </TableCell>
                 </motion.tr>

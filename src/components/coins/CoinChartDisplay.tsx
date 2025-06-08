@@ -80,7 +80,7 @@ export function CoinChartDisplay() {
         </div>
       </CardHeader>
       <CardContent className="p-6">
-        <div className="mb-6 grid gap-5 sm:grid-cols-2">
+        <div className="mb-4 sm:mb-6 grid gap-4 sm:gap-5 sm:grid-cols-2">
           <div className="space-y-2">
             <label
               htmlFor="coin-select"
@@ -151,7 +151,7 @@ export function CoinChartDisplay() {
           </div>
         </div>
 
-        <div className="relative h-[400px] overflow-hidden rounded-lg border border-border/40 bg-card/30 backdrop-blur-sm">
+        <div className="relative h-[300px] sm:h-[350px] md:h-[400px] overflow-hidden rounded-lg border border-border/40 bg-card/30 backdrop-blur-sm">
           {/* The following block for selectedCoin and period display is now commented out
           {selectedCoin && (
             <div className="absolute left-4 top-4 z-10 max-w-[80%] rounded-full bg-card/80 px-3 py-1.5 backdrop-blur-md">

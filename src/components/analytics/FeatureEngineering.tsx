@@ -66,17 +66,18 @@ export function FeatureEngineering() {
   return (
     <div className="space-y-6">
       <Tabs defaultValue="volatility" className="w-full">
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-4 sm:mb-6">
           <TabsList className="bg-secondary/40 backdrop-blur-sm">
             {featureCategories.map(category => (
               <TabsTrigger 
                 key={category.id}
                 value={category.id}
-                className="data-[state=active]:bg-primary/20 data-[state=active]:text-primary data-[state=active]:shadow-sm transition-all duration-200"
+                className="data-[state=active]:bg-primary/20 data-[state=active]:text-primary data-[state=active]:shadow-sm transition-all duration-200 text-xs sm:text-sm"
               >
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1 sm:gap-2">
                   {category.icon}
-                  <span>{category.name}</span>
+                  <span className="hidden sm:inline">{category.name}</span>
+                  <span className="sm:hidden">{category.name.split(' ')[0]}</span>
                 </div>
               </TabsTrigger>
             ))}
@@ -85,7 +86,7 @@ export function FeatureEngineering() {
 
         {featureCategories.map((category) => (
           <TabsContent key={category.id} value={category.id}>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-4 sm:gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               {category.features.map((feature, index) => (
                 <motion.div
                   key={feature.name}

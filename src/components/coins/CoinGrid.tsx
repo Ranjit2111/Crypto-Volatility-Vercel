@@ -50,7 +50,7 @@ export function CoinGrid() {
           </CardDescription>
         </CardHeader>
         <CardContent className="p-6">
-          <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
             {Array.from({ length: 10 }).map((_, index) => (
               <Skeleton
                 key={index}
@@ -114,7 +114,7 @@ export function CoinGrid() {
           </motion.div>
         ) : (
           <motion.div 
-            className="grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+            className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
@@ -135,11 +135,11 @@ export function CoinGrid() {
                   whileHover={{ y: -5 }}
                 >
                   <div 
-                    className={`relative h-full overflow-hidden rounded-xl border border-border/40 bg-gradient-to-br ${getCoinGradient(index)} p-5 backdrop-blur-sm transition-all duration-300 hover:border-primary/60 hover:shadow-lg hover:shadow-primary/10 group-hover:bg-opacity-100 flex flex-col justify-between`}
+                    className={`relative h-full overflow-hidden rounded-xl border border-border/40 bg-gradient-to-br ${getCoinGradient(index)} p-3 sm:p-4 md:p-5 backdrop-blur-sm transition-all duration-300 hover:border-primary/60 hover:shadow-lg hover:shadow-primary/10 group-hover:bg-opacity-100 flex flex-col justify-between`}
                   >
                     <div className="absolute -right-6 -top-6 h-12 w-12 rounded-full bg-primary/10 blur-xl filter group-hover:bg-primary/20" />
-                    <div className="flex flex-col items-center gap-3">
-                      <div className="relative mb-1 h-14 w-14">
+                                          <div className="flex flex-col items-center gap-2 sm:gap-3">
+                        <div className="relative mb-1 h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14">
                         <div className="absolute inset-0 rounded-full bg-card shadow-inner" />
                         <div className="absolute inset-0 rounded-full bg-gradient-to-br from-background/80 to-background/20 opacity-80 backdrop-blur-sm" />
                         <Image
@@ -155,8 +155,8 @@ export function CoinGrid() {
                           }}
                         />
                       </div>
-                      <div className="text-center">
-                        <h3 className="font-medium tracking-wide transition-colors duration-300 group-hover:text-primary">
+                                              <div className="text-center">
+                          <h3 className="text-xs sm:text-sm font-medium tracking-wide transition-colors duration-300 group-hover:text-primary">
                           {coin.length > 12
                             ? `${coin.substring(0, 12)}...`
                             : coin.toUpperCase()}

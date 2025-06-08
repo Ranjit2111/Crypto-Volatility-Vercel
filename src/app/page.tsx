@@ -20,16 +20,16 @@ export default function Home() {
       <Hero />
 
       {/* Prediction Section - Reverted to 2 columns, added ID */}
-      <section id="predictions" className="py-12">
+      <section id="predictions" className="py-8 sm:py-12">
         <div className="container">
-          <div className="mb-6">
-            <h2 className="text-3xl font-bold tracking-tight mb-3">Volatility Predictions</h2>
-            <p className="text-muted-foreground text-lg">
+          <div className="mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3">Volatility Predictions</h2>
+            <p className="text-muted-foreground text-base sm:text-lg">
               Our AI model analyzes historical data to predict which cryptocurrency will experience the highest
               volatility in the next 24 hours. These predictions can help traders anticipate market movements.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
             {/* First column - VolatilityChart at top, info card at bottom */}
             <div className="grid gap-6">
               <VolatilityChart />
@@ -77,16 +77,16 @@ export default function Home() {
       </section>
 
       {/* Combined Chart Section - Moved feature engineering explanation near feature importance chart */}
-      <section className="py-12 bg-secondary/5">
+      <section className="py-8 sm:py-12 bg-secondary/5">
         <div className="container">
-          <div className="mb-6">
-            <h2 className="text-3xl font-bold tracking-tight mb-3">Market Analytics</h2>
-            <p className="text-muted-foreground text-lg">
+          <div className="mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3">Market Analytics</h2>
+            <p className="text-muted-foreground text-base sm:text-lg">
               Explore historical price data and understand the key factors driving our model's predictions.
               These insights help visualize market trends and model decision-making processes.
             </p>
           </div>
-          <div className="grid gap-6 lg:grid-cols-2">
+          <div className="grid gap-4 sm:gap-6 lg:grid-cols-2">
             {/* First column: Price Chart */}
             <div>
               <CoinChartDisplay />
@@ -101,11 +101,11 @@ export default function Home() {
       </section>
 
       {/* Coin Grid Section - Added ID */}
-      <section id="coins" className="py-12">
+      <section id="coins" className="py-8 sm:py-12">
         <div className="container">
-          <div className="mb-6">
-            <h2 className="text-3xl font-bold tracking-tight mb-3">Coin Universe</h2>
-            <p className="text-muted-foreground text-lg">
+          <div className="mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3">Coin Universe</h2>
+            <p className="text-muted-foreground text-base sm:text-lg">
               Browse the cryptocurrencies we track in our prediction system. Click on any coin to view its CoinMarketCap page
               for more detailed market information.
             </p>
@@ -115,11 +115,11 @@ export default function Home() {
       </section>
 
       {/* Model Performance Comparison Section - Added ID */}
-      <section id="model-evolution" className="py-12 bg-secondary/5">
+      <section id="model-evolution" className="py-8 sm:py-12 bg-secondary/5">
         <div className="container">
-          <div className="mb-6">
-            <h2 className="text-3xl font-bold tracking-tight mb-3">Model Evolution</h2>
-            <p className="text-muted-foreground text-lg">
+          <div className="mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3">Model Evolution</h2>
+            <p className="text-muted-foreground text-base sm:text-lg">
               See how our prediction model has evolved through rigorous feature engineering and hyperparameter tuning.
               The comparison below shows the significant performance improvements between our initial and current models.
             </p>
@@ -129,11 +129,11 @@ export default function Home() {
       </section>
 
       {/* Feature Engineering Explanation Section - Added ID */}
-      <section id="feature-engineering" className="py-12">
+      <section id="feature-engineering" className="py-8 sm:py-12">
         <div className="container">
-          <div className="mb-6">
-            <h2 className="text-3xl font-bold tracking-tight mb-3">Feature Engineering</h2>
-            <p className="text-muted-foreground text-lg">
+          <div className="mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3">Feature Engineering</h2>
+            <p className="text-muted-foreground text-base sm:text-lg">
               Our model uses carefully engineered features derived from raw price and volume data.
               Understanding these features helps provide insight into the model's prediction process.
             </p>
@@ -143,11 +143,11 @@ export default function Home() {
       </section>
 
       {/* Project Overview Section - Added ID */}
-      <section id="project-overview" className="py-12 bg-secondary/5">
+      <section id="project-overview" className="py-8 sm:py-12 bg-secondary/5">
         <div className="container">
-          <div className="mb-6">
-            <h2 className="text-3xl font-bold tracking-tight mb-3">Project Overview</h2>
-            <p className="text-muted-foreground text-lg">
+          <div className="mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3">Project Overview</h2>
+            <p className="text-muted-foreground text-base sm:text-lg">
               Learn about the technologies and methodologies used in building this full-stack machine learning application.
             </p>
           </div>

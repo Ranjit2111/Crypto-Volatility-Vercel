@@ -188,13 +188,13 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <h1 className="bg-gradient-to-r from-primary via-white to-accent bg-clip-text text-transparent text-5xl md:text-6xl font-bold tracking-tight drop-shadow-sm">
+            <h1 className="bg-gradient-to-r from-primary via-white to-accent bg-clip-text text-transparent text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight drop-shadow-sm">
               Crypto Volatility Watcher
             </h1>
           </motion.div>
           
           <motion.p 
-            className="mt-6 text-lg md:text-xl text-muted-foreground"
+            className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-muted-foreground px-4 sm:px-0"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -211,13 +211,13 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.4 }}
             >
               <div className="gradient-border-animated inline-block rounded-xl overflow-hidden">
-                <div className="glass-card px-8 py-6 backdrop-blur-md bg-card/30">
+                <div className="glass-card px-4 sm:px-6 md:px-8 py-4 sm:py-6 backdrop-blur-md bg-card/30">
                   <div className="flex items-center justify-center gap-2 mb-1">
                     <Sparkles className="h-4 w-4 text-primary" />
                     <span className="text-muted-foreground">Most volatile for {data.date}</span>
                   </div>
                   <div className="flex items-center justify-center gap-2 mt-1">
-                    <h2 className="text-3xl md:text-4xl font-mono bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-bold tracking-tight">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-mono bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-bold tracking-tight">
                       {data.mostVolatileCoin.toUpperCase()}
                     </h2>
                     {priceDirection === 'up' ? (
@@ -257,21 +257,21 @@ export function Hero() {
           )}
           
           <motion.div 
-            className="mt-12 flex flex-col sm:flex-row justify-center gap-5"
+            className="mt-8 sm:mt-12 flex flex-col sm:flex-row justify-center gap-3 sm:gap-5 px-4 sm:px-0"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
             <Link href="#predictions">
-              <Button className="glow-effect bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg font-medium tracking-wide">
-                <TrendingUp className="mr-2 h-5 w-5" />
+              <Button className="glow-effect bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-medium tracking-wide w-full sm:w-auto">
+                <TrendingUp className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 View Predictions
               </Button>
             </Link>
             <Link href="#coins">
               <Button 
                 variant="outline" 
-                className="border-primary/40 hover:border-primary/80 hover:bg-primary/10 px-8 py-6 text-lg font-medium tracking-wide transition-all duration-200"
+                className="border-primary/40 hover:border-primary/80 hover:bg-primary/10 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-medium tracking-wide transition-all duration-200 w-full sm:w-auto"
               >
                 Explore All Coins
               </Button>

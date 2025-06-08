@@ -23,6 +23,11 @@ export const metadata: Metadata = {
   description: "AI-powered daily cryptocurrency volatility predictions. Track and forecast market movements with advanced analytics and insights.",
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{

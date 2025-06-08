@@ -10,17 +10,19 @@ export function Header() {
   
   return (
     <header className="w-full border-b border-border bg-background/80 backdrop-blur-sm sticky top-0 z-50">
-      <div className="container flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-3">
-          <BarChartBig className="h-7 w-7 text-primary" />
-          <h1 className="text-xl font-semibold tracking-tight text-foreground">
-            Crypto<span className="text-primary font-bold">Volatility</span>Tracker
+      <div className="container flex h-16 items-center justify-between">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <BarChartBig className="h-6 w-6 sm:h-7 sm:w-7 text-primary" />
+          <h1 className="text-lg sm:text-xl font-semibold tracking-tight text-foreground">
+            <span className="hidden sm:inline">Crypto</span><span className="text-primary font-bold">Volatility</span><span className="hidden sm:inline">Tracker</span>
+            <span className="sm:hidden text-primary font-bold">VT</span>
           </h1>
         </div>
         
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           <div className="text-sm flex items-center gap-2">
-            <span className="text-muted-foreground">API Status:</span>
+            <span className="text-muted-foreground hidden sm:inline">API Status:</span>
+            <span className="text-muted-foreground sm:hidden">API:</span>
             {isLoading ? (
               <Badge variant="outline" className="gap-1 text-xs">
                 <span className="h-2 w-2 rounded-full bg-muted-foreground animate-pulse"></span>

@@ -16,7 +16,7 @@ const technologyStacks = [
     id: "backend",
     name: "Backend",
     icon: <Server className="h-5 w-5 text-primary" />,
-    technologies: ["FastAPI", "Nginx", "HTTPS", "CORS"]
+    technologies: ["FastAPI", "Nginx", "HTTPS", "CORS", "DuckDNS", "Systemd services", "cron jobs"]
   },
   {
     id: "ml",
@@ -25,10 +25,10 @@ const technologyStacks = [
     technologies: ["XGBoost", "Feature Engineering", "Hyperparameter Tuning", "Time-Series Cross-Validation"]
   },
   {
-    id: "devops",
-    name: "DevOps",
+    id: "deployment",
+    name: "Deployment",
     icon: <BriefcaseBusiness className="h-5 w-5 text-primary" />,
-    technologies: ["Docker", "Containerization", "CI/CD", "AWS EC2/Vercel Deployment"]
+    technologies: ["AWS EC2", "Vercel"]
   },
   {
     id: "data",
@@ -60,7 +60,7 @@ export function ProjectOverview() {
                   experience significant price movements in the next 24 hours.
                 </p>
                 <p>
-                  This project demonstrates an end-to-end MLOps workflow, from data ingestion and feature engineering to
+                  This project demonstrates an automated ML deployment pipeline, from data ingestion and feature engineering to
                   model tuning, prediction, and API deployment. The frontend visualizes these predictions and
                   provides insights into the model's decision-making process.
                 </p>
@@ -82,7 +82,7 @@ export function ProjectOverview() {
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start gap-2">
                       <span className="text-primary font-bold">•</span>
-                      <span>Containerized, HTTPS-secured, deployed ML application</span>
+                      <span>HTTPS-secured, deployed ML application, serving daily predictions</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-primary font-bold">•</span>

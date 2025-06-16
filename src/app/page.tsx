@@ -3,7 +3,6 @@ import { Hero } from "@/components/layout/Hero";
 import { VolatilityChart } from "@/components/predictions/VolatilityChart";
 import { PredictionTable } from "@/components/predictions/PredictionTable";
 import FeatureImportanceChart from "@/components/predictions/FeatureImportanceChart";
-import { CoinGrid } from "@/components/coins/CoinGrid";
 import { CoinChartDisplay } from "@/components/coins/CoinChartDisplay";
 import { ModelPerformanceComparison } from "@/components/analytics/ModelPerformanceComparison";
 import { FeatureEngineering } from "@/components/analytics/FeatureEngineering";
@@ -97,20 +96,6 @@ export default function Home() {
               <FeatureImportanceChart coin="bitcoin" />
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Coin Grid Section - Added ID */}
-      <section id="coins" className="py-8 sm:py-12">
-        <div className="container">
-          <div className="mb-6 sm:mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3">Coin Universe</h2>
-            <p className="text-muted-foreground text-base sm:text-lg">
-              Browse the cryptocurrencies we track in our prediction system. Click on any coin to view its CoinMarketCap page
-              for more detailed market information.
-            </p>
-          </div>
-          <CoinGrid />
         </div>
       </section>
 

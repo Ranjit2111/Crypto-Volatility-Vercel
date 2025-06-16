@@ -257,7 +257,7 @@ export function Hero() {
           )}
           
           <motion.div 
-            className="mt-8 sm:mt-12 flex flex-col sm:flex-row justify-center gap-3 sm:gap-5 px-4 sm:px-0"
+            className="mt-8 sm:mt-12 flex justify-center px-4 sm:px-0"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
@@ -266,14 +266,6 @@ export function Hero() {
               <Button className="glow-effect bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-medium tracking-wide w-full sm:w-auto">
                 <TrendingUp className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 View Predictions
-              </Button>
-            </Link>
-            <Link href="#coins">
-              <Button 
-                variant="outline" 
-                className="border-primary/40 hover:border-primary/80 hover:bg-primary/10 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg font-medium tracking-wide transition-all duration-200 w-full sm:w-auto"
-              >
-                Explore All Coins
               </Button>
             </Link>
           </motion.div>
